@@ -1,0 +1,12 @@
+packaging 
+torch
+numpy
+einops
+seaborn
+pandas
+torchmetrics
+pytorch_lightning
+opt_einsum
+ray
+scipy
+wandb
