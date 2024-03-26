@@ -276,7 +276,7 @@ We are hoping that MAD will grow as an open source tool for easy and compute-eff
 ### Architecture primitives:
 To contribute a new architecture primitive, please proceed as follows:
 0. Fork this repository.
-1. Add an implementation of your layer primitive to [mad/model/layers](mad/model/layers/); Ideally, your implementation is self-contained in one script. For featurizations and ops used by your layer, we also provide the [ops](mad/model/layer/ops/) and [featurizations](mad/model/layer/featurizations/) directories.
+1. Add an implementation of your layer primitive to [mad/model/layers](mad/model/layers/); Ideally, your implementation is self-contained in one script. For featurizations and ops used by your layer, we also provide the [ops](mad/model/layers/ops/) and [featurizations](mad/model/layers/featurizations/) directories.
 2. Add a default configuration for your layer to [configs/layers](configs/layers/). Please make sure that your layer configuration is normalized to the iso-state and iso-parameter setting we use for MAD (see our paper for details on this).
 3. Add an import for your layer to [mad/model/layers/__init__.py](mad/model/layers/__init__.py) and create an entry for your layer in our layer registry in [mad/registry.py](mad/registry.py).
 4. Verify that your layer is fully compatible with our [train.py](train.py) and [benchmark.py](benchmark.py) scripts.
