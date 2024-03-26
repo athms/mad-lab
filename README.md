@@ -7,7 +7,7 @@ $\rightarrow$ A laboratory to improve and accelerate deep learning architecture 
 </div>
 
 
-**Mechanistic Architecture Design (in-short MAD)** represents a simple framework to accelerate the deep learning architecture design process. MAD uses simple synthetic tasks that can be implemented quickly and without much compute to predict how well new candidate architectures will perform at scale in sequence modeling. Each synthetic task is specifically designed to probe skills of a model relevant for squence modeling, such as compression and recall.
+**Mechanistic Architecture Design (in-short MAD)** represents a simple framework to accelerate the deep learning architecture design process. MAD uses simple synthetic tasks that can be implemented quickly and without much compute to predict how well new candidate architectures will perform at scale in sequence modeling. Each synthetic task is specifically designed to probe skills of a model relevant for sequence modeling, such as compression and recall.
 
 <u>*Why do we care about MAD?*</u> ...because we find that it accurately indicates compute-optimal perplexity of language models at scale:
 
