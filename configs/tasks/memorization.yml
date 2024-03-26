@@ -1,0 +1,7 @@
+baseline:
+  vocab_size: 256 
+  seq_len: 32
+  num_train_examples: 256
+
+changes:
+  vocab_size: [512, 1024, 2048, 4096, 8192]

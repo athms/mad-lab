@@ -1,0 +1,18 @@
+dim: 128
+order: 2
+num_heads: 1
+inner_factor: 4
+num_blocks: 1
+fused_bias_fc: false
+outer_mixing: false
+dropout: 0
+proj_groups: 4
+post_order_ffn: false
+short_filter_order: 3
+nested: true
+activation: 'id'
+long_conv_cfg:
+  bias: true
+  filter_cls: 'implicit'
+  filter_cfg:
+    order: 4

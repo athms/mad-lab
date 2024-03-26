@@ -1,0 +1,4 @@
+dim: 128
+head_dim: 16
+dim_att: 128
+head_dim_divisor: 8

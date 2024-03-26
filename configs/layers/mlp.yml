@@ -1,0 +1,4 @@
+dim: 128
+dim_inner: null
+drop_rate: 0
+bias: false

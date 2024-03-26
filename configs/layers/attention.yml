@@ -1,0 +1,7 @@
+dim: 128
+causal: true
+n_heads: 1
+rotary_emb_dim: 128
+dropout: 0
+window_size: [-1, -1]
+use_flash_attn: true

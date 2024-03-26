@@ -1,0 +1,5 @@
+dim: 128
+dim_inner: 16
+num_experts: 8
+active_experts: 2
+bias: false

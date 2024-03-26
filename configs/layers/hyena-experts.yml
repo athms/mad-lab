@@ -1,0 +1,19 @@
+dim: 128
+dim_inner: 16
+num_experts: 8
+active_experts: 2
+order: 2
+num_heads: 1
+inner_factor: 1
+num_blocks: 1
+fused_bias_fc: false
+outer_mixing: false
+dropout: 0
+post_order_ffn: false
+short_filter_order: 3
+activation: 'id'
+long_conv_cfg:
+  bias: true
+  filter_cls: 'implicit'
+  filter_cfg:
+    order: 16

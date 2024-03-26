@@ -1,0 +1,10 @@
+baseline:
+  vocab_size: 16
+  seq_len: 128
+  num_train_examples: 12800
+  multi_query: True
+
+changes:
+  vocab_size: [32, 64, 128]
+  seq_len: [256, 512, 1024]
+  num_train_examples: [6400, 3200, 1600, 800]

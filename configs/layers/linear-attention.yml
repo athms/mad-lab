@@ -1,0 +1,9 @@
+dim: 128
+expand_k: 1
+expand_v: 1
+num_heads: 1
+feature_map: elementwise_product
+parallel_implementation: quadratic
+tie_feature_map_qk: false
+norm_q: false
+norm_k: false
