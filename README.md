@@ -17,8 +17,8 @@ $\rightarrow$ A laboratory to improve and accelerate deep learning architecture 
 
 In addition to providing an implementation of the MAD synthetic task suite, this repository provides an implementation of several state-of-the-art layer primitives to allow for easy architecture prototyping, such as attention, Hyena, Mamba, and Gated Linear Attention.
 
-For all details on the MAD synthetic tasks and pipeline, see our recent paper and the documentation below:
-*preprint link will be inserted once it is online*
+For all details on the MAD synthetic tasks and pipeline, see our recent paper on:
+[Mechanistic Design and Scaling of Hybrid Architectures](https://arxiv.org/abs/2403.17844)
 
 
 
