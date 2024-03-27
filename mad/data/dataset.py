@@ -239,7 +239,7 @@ class MemoryDataset(torch.utils.data.Dataset):
 
         # sequential data generation:
         else:
-            iterator = tqdm(range(num_examples)) if verbose else range(num_examples)
+            iterator = tqdm(range(num_examples)) if self.verbose else range(num_examples)
             instances = [self.instance_fn(**self.instance_fn_kwargs) for _ in iterator]
 
         if len(instances[-1])==2:
