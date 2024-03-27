@@ -38,7 +38,7 @@ def generate_data(
     num_train_examples: int,
     num_test_examples: int,
     num_workers: int,
-    verbose: bool = False
+    verbose: bool = True
 ):
     """
     Generate train/test data in memory (for small datasets or large memory).
