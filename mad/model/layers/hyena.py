@@ -64,7 +64,7 @@ class HyenaConv(OptimModule):
         bias = self.bias if bias is None else bias
         bias = bias if self.use_bias else 0 * bias
         k = k.to(x.device)
-        y = fftconv(u=x, k=k, D=bias, dropout_mask=None, gelu=False, k_rev=k_rev)
+        y = fftconv(x, k, bias)
 
         return y.to(dtype=x.dtype)
     
