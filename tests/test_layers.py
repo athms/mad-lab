@@ -14,8 +14,6 @@ def test_layer_forward_pass():
     dim = 128
     max_length = 128
     for layer_name, layer_reg in layer_registry.items():
-        if 'rwkv' in layer_name: # [AT, Mar, 24] skipping RWKV for now due to some issues with loading their cuda kernels
-            continue
         print(f'...now testing: {layer_name}')
         with open(layer_reg['cfg'], 'r') as f:
             layer_cfg = yaml.safe_load(f)
