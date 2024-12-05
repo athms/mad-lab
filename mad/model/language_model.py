@@ -72,8 +72,8 @@ class LanguageModel(nn.Module):
 
     def _init_weights(self, m, initializer_range=0.02) -> None:
         if isinstance(m, nn.Linear):
-            nn.init.normal_(m.weight, mean=0, std=initializer_range)
             if m.bias is not None:
-                nn.init.zeros_(m.bias)
+                if not getattr(m.bias, "_no_reinit", False):
+                    nn.init.zeros_(m.bias)
         elif isinstance(m, nn.Embedding):
             nn.init.normal_(m.weight, mean=0, std=initializer_range)
