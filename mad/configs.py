@@ -101,6 +101,7 @@ class MADConfig(BaseConfig):
             v_motif_size=self.v_motif_size,
             frac_noise=self.frac_noise,
             noise_vocab_size=self.noise_vocab_size,
+            num_tokens_to_copy=self.num_tokens_to_copy,
             rng=np.random.default_rng(self.seed),
             multi_query=self.multi_query,
             kv_map=kv_map
