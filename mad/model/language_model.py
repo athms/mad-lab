@@ -1,3 +1,4 @@
+from collections import OrderedDict
 import torch
 import typing as tp
 from torch import nn
@@ -46,9 +47,16 @@ class LanguageModel(nn.Module):
         
         self.model = nn.ModuleList([])
         for layer, layer_cfg in zip(layers, layer_cfgs):
-            self.model.append(nn.Sequential(norm(layer_cfg['dim']), layer(**layer_cfg)))
-        
-        self.unembed = nn.Sequential(norm(layer_cfg['dim']), nn.Linear(dim, vocab_size))
+            self.model.append(nn.Sequential(OrderedDict([
+                ('norm', norm(layer_cfg['dim'])),
+                ('layer', layer(**layer_cfg))
+            ])))
+
+        self.unembed = nn.Sequential(OrderedDict([
+            ('norm', norm(layer_cfg['dim'])), 
+            ('lm_head', nn.Linear(dim, vocab_size))
+        ]))
+
         self.apply(self._init_weights)
         
     def embed(self,

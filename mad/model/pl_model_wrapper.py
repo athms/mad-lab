@@ -93,18 +93,29 @@ class PLModelWrap(pl.LightningModule):
         return self.phase_step(batch, batch_idx, phase='test')
 
     def configure_optimizers(self) -> tp.Union[torch.optim.Optimizer, tp.Dict[str, tp.Any]]:
+        # param groups
+        decay_params, no_decay_params = [], []
+        for n, p in self.model.named_parameters():
+            if p.requires_grad:
+                if not getattr(p, '_no_weight_decay', False) and ("bias" not in n) and ("norm" not in n):
+                    decay_params.append(p)
+                else:
+                    no_decay_params.append(p)
+        param_groups = [
+            {"params": decay_params, "weight_decay": self.mad_config.weight_decay},
+            {"params": no_decay_params, "weight_decay": 0.0},
+        ]
+
         # optimizer:
         if self.mad_config.optimizer == 'adamw':
             optimizer = torch.optim.AdamW(
-                self.parameters(),
-                lr=self.mad_config.lr,
-                weight_decay=self.mad_config.weight_decay
+                param_groups,
+                lr=self.mad_config.lr
             )
         elif self.mad_config.optimizer == 'sgd':
             optimizer = torch.optim.SGD(
-                self.parameters(),
-                lr=self.mad_config.lr,
-                weight_decay=self.mad_config.weight_decay
+                param_groups,
+                lr=self.mad_config.lr
             )
         else:
             raise ValueError(f"invalid optimizer: {self.mad_config.optimizer}")
