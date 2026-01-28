@@ -1,0 +1,11 @@
+dim: 128
+expand_v: 2
+head_dim: 32
+num_heads: 4
+mode: 'chunk'
+use_gate: true
+use_short_conv: true
+conv_size: 4
+conv_bias: false
+allow_neg_eigval: false
+norm_eps: 0.00001

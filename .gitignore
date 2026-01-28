@@ -1,1 +1,8 @@
 __pycache__/
+configs.zip
+wandb/
+logs/
+benchmark/
+assets/
+.github
+data

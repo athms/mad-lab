@@ -1,0 +1,13 @@
+dim: 128
+expand_v: 2
+head_dim: 32
+num_heads: 4
+mode: 'fused_recurrent'
+use_gate: true
+use_short_conv: true
+conv_size: 4
+conv_bias: false
+norm_eps: 0.00001
+bs_basis: 'hadamard'
+bs_subheads: 1
+allow_neg_eigval: false

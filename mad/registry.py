@@ -141,6 +141,16 @@ layer_registry = {
         'module': layers.channel_mixer_rwkv6_wrapped,
         'cfg': 'configs/layers/rwkv6-channel-mixer.yml',
         'shorthand': 'R6c'
+    },
+    'gated-delta-net': {
+        'module': layers.GatedDeltaNet,
+        'cfg': 'configs/layers/gated-delta-net.yml',
+        'shorthand': 'GDN'
+    },
+    'bs-gated-delta-net': {
+        'module': layers.BSGatedDeltaNet,
+        'cfg': 'configs/layers/bs-gated-delta-net.yml',
+        'shorthand': 'BSGDN'
     }
 }
 

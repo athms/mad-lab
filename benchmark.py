@@ -2,8 +2,16 @@ import os
 import argparse
 import yaml
 import torch
-import ray
 
+# ---- PyTorch 2.6+ "weights_only" safe-unpickling allowlist for Lightning .ckpt ----
+try:
+    from torch.serialization import add_safe_globals
+    from mad.configs import MADConfig  # add more if the error asks for them
+    add_safe_globals([MADConfig])
+except Exception as e:
+    print("Warning: could not register torch safe globals:", e)
+
+import ray
 import typing as tp
 import numpy as np
 import ray.util.multiprocessing as mp
